@@ -15,6 +15,7 @@ public class tickets extends javax.swing.JFrame {
    
     public tickets() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -339,7 +340,9 @@ public class tickets extends javax.swing.JFrame {
     } */
     
     private void BookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BookBtnMouseClicked
-        // TODO add your handling code here:
+       
+       
+        
     }//GEN-LAST:event_BookBtnMouseClicked
 
     /**

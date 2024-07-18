@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
@@ -27,10 +28,13 @@ public class passengers extends javax.swing.JFrame {
      */
     public passengers() {
         initComponents();
+         this.setLocationRelativeTo(null);
         String [] titulo = new String[]{"Name Passenger","Number Passenger","Addres Passenger", "Phone Number"};
         dtm.setColumnIdentifiers(titulo);
         PassengersTable.setModel(dtm);
     }
+    
+    
     
     void save(){
         dtm.addRow(new Object[]{
@@ -38,14 +42,14 @@ public class passengers extends javax.swing.JFrame {
         });
     }
     
-    /* private void Clear(){
+    private void Clear(){
         
         PNameTb.setText("");
         PassNumberTb.setText("");
         PAddressTb.setText("");
         PPhoneTb.setText("");
         
-    } */
+    } 
     
     void delete(){
         
@@ -54,15 +58,52 @@ public class passengers extends javax.swing.JFrame {
         
     } 
     
-    void edit(){
-      
-       int fila = PassengersTable.getSelectedRow();
-       dtm.setValueAt(PNameTb.getText(), fila, 0);
-       dtm.setValueAt(PassNumberTb.getText(), fila, 1);
-       dtm.setValueAt(PAddressTb.getText(), fila, 2);
-       dtm.setValueAt(PPhoneTb.getText(), fila, 3);
-      
-     }
+  void edit() {
+    int fila = PassengersTable.getSelectedRow();
+    
+    if (fila < 0) {
+        JOptionPane.showMessageDialog(this, "Select a record to edit");
+        return;
+    }
+
+    
+    String originalCode = (String) dtm.getValueAt(fila, 0);
+
+    
+    dtm.setValueAt(PNameTb.getText(), fila, 0);
+    dtm.setValueAt(PassNumberTb.getText(), fila, 1);
+    dtm.setValueAt(PAddressTb.getText(), fila, 2);
+    dtm.setValueAt(PPhoneTb.getText(), fila, 3);
+
+    try {
+        ConectionDB conDB = new ConectionDB();
+        Connection cn = conDB.getConnection();
+
+        
+        String sql = "UPDATE passengerstbl SET PName = ?, PPass = ?, PAdd = ?, PPhone = ? WHERE PName = ?";
+        java.sql.PreparedStatement update = cn.prepareStatement(sql);
+        
+        update.setString(1, PNameTb.getText());
+        update.setString(2, PassNumberTb.getText());
+        update.setString(3, PAddressTb.getText());
+        update.setString(4, PPhoneTb.getText());
+        update.setString(5, originalCode); 
+        
+        update.executeUpdate();
+        JOptionPane.showMessageDialog(this, "Passenger has been successfully updated");
+        Clear();
+        
+       
+        loadPassengersData();
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error updating passenger");
+    }
+}
+
+
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -229,6 +270,11 @@ public class passengers extends javax.swing.JFrame {
         ));
         PassengersTable.setRowHeight(27);
         PassengersTable.setSelectionBackground(new java.awt.Color(0, 0, 153));
+        PassengersTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PassengersTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(PassengersTable);
 
         PassNumberTb.setBackground(new java.awt.Color(204, 204, 204));
@@ -389,7 +435,7 @@ public class passengers extends javax.swing.JFrame {
 
                 add.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Passenger has been successfully added");
-                limpiarTabla();
+                Clear();
                 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -400,7 +446,7 @@ public class passengers extends javax.swing.JFrame {
 
     private void SaveDtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveDtnActionPerformed
         save();
-        //Clear();
+        
     }//GEN-LAST:event_SaveDtnActionPerformed
 
     private void EditDtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditDtnActionPerformed
@@ -427,6 +473,30 @@ public class passengers extends javax.swing.JFrame {
         delete();
         
     }//GEN-LAST:event_DeleteDtnActionPerformed
+
+    private void PassengersTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PassengersTableMouseClicked
+        
+         int fila = PassengersTable.getSelectedRow();
+        if (fila == -1) {
+            
+            JOptionPane.showMessageDialog(this, "Select a Row");
+            
+        }else {
+            
+            String name = (String) PassengersTable.getValueAt(fila, 0);
+            String num = (String) PassengersTable.getValueAt(fila, 1);
+            String address = (String) PassengersTable.getValueAt(fila, 2);
+            String phone = (String) PassengersTable.getValueAt(fila, 3);
+            
+             PNameTb.setText(name);
+             PassNumberTb.setText(num);
+             PAddressTb.setText(address);
+             PPhoneTb.setText(phone); 
+             
+            
+        }
+        
+    }//GEN-LAST:event_PassengersTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -488,6 +558,10 @@ public class passengers extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void limpiarTabla() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void loadPassengersData() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

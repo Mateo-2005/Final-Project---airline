@@ -15,6 +15,7 @@ public class options extends javax.swing.JFrame {
      */
     public options() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**

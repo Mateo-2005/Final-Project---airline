@@ -7,6 +7,7 @@ package proyect_airlane;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +23,7 @@ public class flights extends javax.swing.JFrame {
     public flights() {
         
         initComponents();
+         this.setLocationRelativeTo(null);
         String [] titulo = new String[]{"Code Fly","Source","Destination", "Date", "Number Seats"};
         dtm.setColumnIdentifiers(titulo);
         FlightTable.setModel(dtm);
@@ -29,6 +31,16 @@ public class flights extends javax.swing.JFrame {
         
     }
     
+     private void Clear(){
+        
+        PCodeTb.setText("");
+        PSourceCb.setSelectedIndex(-1);
+        PDestCb.setSelectedIndex(-1);
+        PDate.setDate(null);
+        SeatsTb.setText("");
+        
+    } 
+     
     private void initializeTableModel() {
         dtm = new DefaultTableModel();
         String[] titulo = new String[] {"Code Fly", "Source", "Destination", "Date", "Number Seats"};
@@ -37,21 +49,59 @@ public class flights extends javax.swing.JFrame {
     }
     
      void save(){
-        dtm.addRow(new Object[]{
+         if (PCodeTb.getText().isEmpty() || SeatsTb.getText().isEmpty() || PSourceCb.getSelectedIndex() == -1 || PDestCb.getSelectedIndex() == -1){
+             JOptionPane.showMessageDialog(this, "Missing information");
+         }else {
+            dtm.addRow(new Object[]{
             PCodeTb.getText(),PSourceCb.getSelectedItem(),PDestCb.getSelectedItem(),PDate.getDate() , SeatsTb.getText()
-        });
+        }); 
+         }
+        
     }
      
-    void edit(){
-      
-       int fila = FlightTable.getSelectedRow();
-       dtm.setValueAt(PCodeTb.getText(), fila, 0);
-       dtm.setValueAt(PSourceCb.getSelectedItem(), fila, 1);
-       dtm.setValueAt(PDestCb.getSelectedItem(), fila, 2);
-       dtm.setValueAt(PDate.getDate(), fila, 3);
-       dtm.setValueAt(SeatsTb.getText(), fila, 4);
-       
-     }
+    void edit() {
+    int fila = FlightTable.getSelectedRow();
+    
+    if (fila < 0) {
+        JOptionPane.showMessageDialog(this, "Select a record to edit");
+        return;
+    }
+
+    
+    dtm.setValueAt(PCodeTb.getText(), fila, 0);
+    dtm.setValueAt(PSourceCb.getSelectedItem(), fila, 1);
+    dtm.setValueAt(PDestCb.getSelectedItem(), fila, 2);
+    dtm.setValueAt(PDate.getDate(), fila, 3);
+    dtm.setValueAt(SeatsTb.getText(), fila, 4);
+
+   
+    String code = (String) dtm.getValueAt(fila, 0);
+    
+    try {
+        ConectionDB conDB = new ConectionDB();
+        Connection cn = conDB.getConnection();
+
+        String sql = "UPDATE flighttbl SET FICode = ?, FISource = ?, FIDest = ?, FIDate = ?, FISeats = ? WHERE FICode = ?";
+        java.sql.PreparedStatement update = cn.prepareStatement(sql);
+        
+        update.setString(1, PCodeTb.getText());
+        update.setString(2, PSourceCb.getSelectedItem().toString());
+        update.setString(3, PDestCb.getSelectedItem().toString());
+        update.setString(4, PDate.getDate().toString());
+        update.setInt(5, Integer.valueOf(SeatsTb.getText()));
+        update.setString(6, code); 
+        
+        update.executeUpdate();
+        JOptionPane.showMessageDialog(this, "Flight has been successfully updated");
+        Clear();
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error updating flight");
+    }
+
+}
+
     
      void delete(){
         
@@ -216,7 +266,12 @@ public class flights extends javax.swing.JFrame {
             }
         ));
         FlightTable.setRowHeight(29);
-        FlightTable.setSelectionBackground(new java.awt.Color(0, 0, 153));
+        FlightTable.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        FlightTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FlightTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(FlightTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -333,6 +388,7 @@ public class flights extends javax.swing.JFrame {
     private void EditDtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditDtnActionPerformed
        JOptionPane.showMessageDialog(this, "To edit a record you must select it, and fill in the data again.");
        edit();
+       
     }//GEN-LAST:event_EditDtnActionPerformed
 
     private void BackDtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackDtnActionPerformed
@@ -372,6 +428,7 @@ public class flights extends javax.swing.JFrame {
               
                 add.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Flight has been successfully added");
+                Clear();
                 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -384,6 +441,32 @@ public class flights extends javax.swing.JFrame {
     JOptionPane.showMessageDialog(this, "To delete a record you must select it");
         delete();
     }//GEN-LAST:event_DeleteDtnActionPerformed
+
+    private void FlightTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FlightTableMouseClicked
+        
+        int fila = FlightTable.getSelectedRow();
+        if (fila == -1) {
+            
+            JOptionPane.showMessageDialog(this, "Select a Row");
+            
+        }else {
+            
+            String code = (String) FlightTable.getValueAt(fila, 0);
+            String sour = (String) FlightTable.getValueAt(fila, 1);
+            String dest = (String) FlightTable.getValueAt(fila, 2);
+            Date date = (Date) FlightTable.getValueAt(fila, 3);
+            String seat = (String) FlightTable.getValueAt(fila, 4);
+            
+             PCodeTb.setText(code);
+             PSourceCb.setSelectedItem(sour);
+             PDestCb.setSelectedItem(dest);
+             PDate.setDate(date); 
+             SeatsTb.setText(seat);
+             
+ 
+        }
+        
+    }//GEN-LAST:event_FlightTableMouseClicked
 
     /**
      * @param args the command line arguments

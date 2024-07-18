@@ -15,6 +15,7 @@ public class cancellation extends javax.swing.JFrame {
      */
     public cancellation() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**
