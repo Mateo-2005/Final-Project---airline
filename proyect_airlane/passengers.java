@@ -20,7 +20,7 @@ import net.proteanit.sql.DbUtils;
  *
  * @author LENOVO
  */
-public class passengers extends javax.swing.JFrame {
+public class passangers extends javax.swing.JFrame{
   DefaultTableModel dtm = new DefaultTableModel();
 
     /**
