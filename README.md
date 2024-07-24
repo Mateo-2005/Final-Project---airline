@@ -63,11 +63,12 @@ Develop an automated and secure system to efficiently manage "AEROSKY" flights, 
  - Server-side programming language used to handle business logic and communication with the database.
    
 4.JasperSoft
+
 <img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/jaspersoft.png width="300" height="200">
 
-IMAGE
 - JasperSoft is an open-source business intelligence and reporting platform that enables organizations to create, design, and deploy interactive reports and data visualizations.
 
+---
 
 ## ⚙ Functional and Non-Functional Elements of the Project
 
