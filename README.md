@@ -47,7 +47,7 @@ Develop an automated and secure system to efficiently manage "AEROSKY" flights, 
 
 ### 🛠 Tools and Technologies Used
 
-1. *Java 
+1. *Java*:
 <img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/JAVA.jpg width="300" height="200">
 
    - Programming language used to add interactivity and dynamism to the online store.
@@ -62,7 +62,7 @@ Develop an automated and secure system to efficiently manage "AEROSKY" flights, 
 
  - Server-side programming language used to handle business logic and communication with the database.
    
-4.JasperSoft
+4. *JasperSoft*:
 
 <img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/jaspersoft.png width="300" height="200">
 
@@ -72,9 +72,39 @@ Develop an automated and secure system to efficiently manage "AEROSKY" flights, 
 
 ## ⚙ Functional and Non-Functional Elements of the Project
 
-### 🛠 Functional Elements
 
-Results 📈
+### Functional Requirements:
+🔐 User Registration and Authentication:
+Users must be able to authenticate to access the system.
+
+🛫 Flight Management:
+Allow the creation, modification, and cancellation of flights.
+
+✈️ Flight Reservation:
+Enable users to search for available flights by date, destination, and number of seats.
+Reservation process that includes the selection of available seats.
+
+👥 Passenger Management:
+Maintain accurate records of passengers and their personal details.
+
+
+### Non-Functional Requirements:
+🔒 Security:
+Comply with industry security standards to protect users' personal and financial information.
+
+⚡ Performance:
+Maintain fast and efficient response times, even during periods of high demand.
+
+🖥️ Usability:
+Provide an intuitive and user-friendly interface for all types of users, from passengers to system administrators.
+
+🌐 Availability:
+Ensure system availability 24 hours a day, 7 days a week, with minimal planned downtime.
+
+🔧 Maintainability:
+Facilitate system maintenance through a modular architecture and well-documented code.
+
+## 📈 Results 
 - Automation of important processes such as flight management and reservations.
 - Intuitive and user-friendly interface that allows users (customers) to search for flights, select seats, and make reservations.
 - Instant confirmation of reservations with options for management and cancellation, aiming for customer satisfaction.
