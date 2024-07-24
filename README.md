@@ -40,7 +40,7 @@ Develop an automated and secure system to efficiently manage "AEROSKY" flights, 
 - User Interface: Offers an accessible and friendly experience, requiring authentication to ensure data privacy.
 - Database: PHP Admin is used to manage the database, storing information such as flight details and passenger data.
   
-![](https://github.com/Mateo-2005/Final-Project---airline/blob/main/4.jpg)
+![](https://github.com/Mateo-2005/Final-Project---airline/blob/main/4.jpg)                  ![](https://github.com/Mateo-2005/Final-Project---airline/blob/main/1.jpg)
 
 ---
 
