@@ -41,15 +41,6 @@ IMAGEN
 
 IMAGEN
 
-### 🌟 Project Importance
-
-- *🌐 Accessibility and convenience*: Provide customers with a convenient and accessible way to purchase technological products from anywhere, at any time.
-- *🏆 Market competitiveness*: Enable the company to compete effectively in the digital market, where more and more consumers prefer to shop online.
-- *📊 Business growth*: Help the company expand its reach and increase revenue through an effective online presence.
-- *🚀 Technological innovation*: Promote the use of advanced technologies to enhance user experience and business management.
-
-- ![Imagen de WhatsApp 2024-07-22 a las 19 40 16_b57e99e8](https://github.com/user-attachments/assets/7d44e162-56e8-44c5-bd76-b42c9d64dcd7)
-
 ---
 
 ## 🧩 Methodology: Agile Development Approach
@@ -93,11 +84,20 @@ IMAGE
 
 ### 🛠 Functional Elements
 
-
-
+Results 📈
+Automation of important processes such as flight management, reservations, and cancellations.
+Intuitive and user-friendly interface that allows users (customers) to search for flights, select seats, and make reservations.
+Instant confirmation of reservations with options for management and cancellation, aiming for customer satisfaction.
 
 ## 📌 Conclusions
 
 - Optimization and automation of processes reduce daily management of flights and reservations, enabling AEROSKY to operate efficiently.
 - Implementation of an intuitive interface with clear options enhances AEROSKY's reputation and customer satisfaction.
 - The system complies with industry regulations and security standards, maintaining all user information in complete confidentiality.
+
+## 🚀 Recommendations
+- Implement a monitoring process for the system to detect and resolve potential issues or make improvements.
+- Train staff on the effective use of the system to provide efficient technical support.
+- Plan for future system expansion concerning the number of flights and users.
+- Gradually collect feedback from users to identify areas for improvement.
+
