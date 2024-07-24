@@ -50,12 +50,12 @@ Develop an automated and secure system to efficiently manage "AEROSKY" flights, 
 1. *Java*:
 <img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/JAVA.jpg width="300" height="200">
 
-   - Programming language used to add interactivity and dynamism to the online store.
+   - Programming language used to add interactivity and dynamism to the aplication.
 
 2. *Apache Neatbeans IDE 22*:
 <img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/NETBEANS.png width="175" height="210">
 
-- Markup language used to structure the content and design of the web page.
+- Markup language used to structure the content and design of the aplication.
 
 3. *PHP Admin*:
 <img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/PhpMyAdmin.png width="300" height="200">
