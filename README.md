@@ -45,20 +45,6 @@ Develop an automated and secure system to efficiently manage "AEROSKY" flights, 
 
 ---
 
-## 🧩 Methodology: Agile Development Approach
-
-- Iterative Development: Adopt an iterative approach to continuously refine and enhance the system based on feedback and changing requirements.
-- Sprints: Divide the project into sprints of 2-4 weeks each, focusing on specific functionalities or modules to develop, test, and integrate into the system.
-- Daily Stand-ups: Conduct daily stand-up meetings to discuss progress, challenges, and plan for the day's tasks, ensuring transparency and alignment among team members.
-- User Stories: Define user stories to capture functional requirements from the perspective of end-users, ensuring that each sprint delivers tangible value to stakeholders.
-- Continuous Integration and Deployment: Implement CI/CD pipelines to automate testing, build, and deployment processes, ensuring a stable and reliable system at all times.
-- Feedback Loop: Establish a feedback loop with stakeholders and end-users to gather insights and validate assumptions, allowing for adjustments and improvements throughout development.
-- Quality Assurance: Implement rigorous testing protocols, including unit tests, integration tests, and user acceptance testing (UAT), to ensure the system meets quality standards and user expectations.
-- Scalability and Flexibility: Design the system with scalability and flexibility in mind to accommodate future growth, technological advancements, and changing business needs.
-
-
-
-
 ### 🛠 Tools and Technologies Used
 
 1. *Java (version 1.4)*:
