@@ -24,10 +24,6 @@ This project involves the development of a flight management system named "AEROS
 
 ![](https://github.com/Mateo-2005/Final-Project---airline/blob/main/2.jpg)
 
-![](https://github.com/Mateo-2005/Final-Project---airline/blob/main/1.jpg)
-
-![](https://github.com/Mateo-2005/Final-Project---airline/blob/main/4.jpg)
-
 
 ### 🎯 General and Specific Objectives
 
@@ -43,8 +39,8 @@ Develop an automated and secure system to efficiently manage "AEROSKY" flights, 
 ### 🛠️ Components 
 - User Interface: Offers an accessible and friendly experience, requiring authentication to ensure data privacy.
 - Database: PHP Admin is used to manage the database, storing information such as flight details and passenger data.
-
-IMAGEN
+  
+![](https://github.com/Mateo-2005/Final-Project---airline/blob/main/4.jpg)
 
 ---
 
