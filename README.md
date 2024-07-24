@@ -22,7 +22,7 @@
 ### 📜 Brief Project Description
 This project involves the development of a flight management system named "AEROSKY". Through this system, the aim is to efficiently administer and manage flights.
 
-![](https://github.com/Mateo-2005/Final-Project---airline/blob/main/2.jpg)
+![](https://github.com/andrewAlexander28/Phyton-1/blob/main/2.jpg)
 
 
 ### 🎯 General and Specific Objectives
@@ -41,31 +41,29 @@ Develop an automated and secure system to efficiently manage "AEROSKY" flights, 
 - User Interface: Offers an accessible and friendly experience, requiring authentication to ensure data privacy.
 - Database: PHP Admin is used to manage the database, storing information such as flight details and passenger data.
   
-![](https://github.com/Mateo-2005/Final-Project---airline/blob/main/4.jpg)               
+![](https://github.com/andrewAlexander28/Phyton-1/blob/main/4.jpg)               
 
 ---
 
 ### 🛠 Tools and Technologies Used
 
-1. *Java (version 1.4)*:
-
-IMAGE
+1. *Java 
+<img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/JAVA.jpg width="300" height="200">
 
    - Programming language used to add interactivity and dynamism to the online store.
 
 2. *Apache Neatbeans IDE 22*:
- 
-IMAGE
+<img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/NETBEANS.png width="175" height="210">
 
 - Markup language used to structure the content and design of the web page.
 
 3. *PHP Admin*:
-
-IMAGE
+<img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/PhpMyAdmin.png width="300" height="200">
 
  - Server-side programming language used to handle business logic and communication with the database.
    
 4.JasperSoft
+<img src=https://github.com/andrewAlexander28/Phyton-1/blob/main/jaspersoft.png width="300" height="200">
 
 IMAGE
 - JasperSoft is an open-source business intelligence and reporting platform that enables organizations to create, design, and deploy interactive reports and data visualizations.
